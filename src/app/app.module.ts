@@ -11,9 +11,12 @@ import { UserComponent } from './user/user.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserService } from "./shared/user.service";
+import { EventService } from "./shared/event.service";
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './auth/auth.interception';
+import { EventsComponent } from './home/events/events.component';
+import { EventsListComponent } from './home/events-list/events-list.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { AuthInterceptor } from './auth/auth.interception';
     RegistrationComponent,
     LoginComponent,
     HomeComponent,
+    EventsComponent,
+    EventsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,7 @@ import { AuthInterceptor } from './auth/auth.interception';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  providers: [UserService, {
+  providers: [UserService, EventService, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true,

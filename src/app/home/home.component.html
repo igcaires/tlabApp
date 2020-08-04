@@ -3,7 +3,22 @@
   <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Sair</button>
 </nav>
 
-<div class="card m-5" style="width: 18rem;" *ngIf="userDetails">
+<div class="container">
+  <div class="jumbtron">
+    <h1 class="display-4 text-center">Eventos</h1>
+    <hr>
+    <div class="row">
+      <div class="col-md-5">
+        <app-events></app-events>
+      </div>
+      <div class="col-md-7">
+        <app-events-list></app-events-list>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="card m-5" style="width: 18rem;" *ngIf="userDetails">
   <ul class="list-group">
     <li class="list-group-item">
       <strong>Usuário: </strong> {{ userDetails.userName }}
@@ -12,4 +27,4 @@
       <strong>Email: </strong> {{ userDetails.email }}
     </li>
   </ul>
-</div>
+</div> -->

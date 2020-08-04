@@ -1,0 +1,10 @@
+<table class="table table-hover">
+  <tr *ngFor="let event of service.list">
+    <td (click)="populateForm(event)">{{ event.Description }}</td>
+    <td (click)="populateForm(event)">{{ event.StartDate }}</td>
+    <td (click)="populateForm(event)">{{ event.EndDate }}</td>
+    <td>
+      <button class="btn btn-danger btn-sm" (click)="onDelete(event.Id)">Remover</button>
+    </td>
+  </tr>
+</table>
