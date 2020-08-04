@@ -8,19 +8,11 @@ import { UserService } from '../shared/user.service';
   styleUrls: []
 })
 export class HomeComponent implements OnInit {
-  userDetails;
 
   constructor(private router: Router, private service: UserService) { }
 
   ngOnInit(): void {
-    this.service.getUserProfile().subscribe(
-      res => {
-        this.userDetails = res;
-      },
-      error => {
-        console.log(error);
-      },
-    );
+
   }
 
   onLogout() {
