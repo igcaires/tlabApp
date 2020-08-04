@@ -39,6 +39,11 @@ export class EventsComponent implements OnInit {
   }
 
   insert(form: NgForm) {
+    if (this.service.formData.StartDate > this.service.formData.EndDate) {
+      this.toast.warning('Data de ínicio não pode ser maior que a data fim', 'Alerta!')
+      return;
+    }
+
     this.service.postEvent().subscribe(
       res => {
         this.resetForm(form);
